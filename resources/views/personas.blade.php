@@ -1,8 +1,14 @@
 
 @extends('layouts.app')
 @section('content')
-
-
+<tr>
+    <td colspan="4">
+        <a href="{{ route('persona.create' )}}">Nueva Persona</a>
+    </td>
+</tr>
+<tr>
+    <th colspan="4">Listado de Personas</th>
+</tr>
 
 <div class="row">
     @if($personas)

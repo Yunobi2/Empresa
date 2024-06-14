@@ -20,5 +20,7 @@ Route::get('/contacto', function () {
 
 Route::view('/','home')->name('inicio');
 Route::get('persona','App\Http\Controllers\PersonasController@index')->name('persona.index');
+Route::get('persona/crear', 'App\Http\Controllers\PersonasController@create')->name('persona.create');
+Route::post('persona', 'App\Http\Controllers\PersonasController@store')->name('persona.store');
 Route::get('persona/{nPerCodigo}','App\Http\Controllers\PersonasController@show')->name('persona.show');
 Route::view('contacto','contacto')->name('contacto');
