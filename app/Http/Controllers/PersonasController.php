@@ -56,35 +56,8 @@ class PersonasController extends Controller
             $sueldo = request('nPerSueldo');
             $estado = request('cPerEstado');
             $rnd = request('cPerRnd');*/
-
-            Persona::create([
-                'cPerApellido' => $apellido,
-                'cPerNombre' => $nombre,
-                'cPerDireccion' => $direccion,
-                'dPerFecNac' => $fechadenacimiento,
-                'nPerEdad' => $edad,
-                'nPerSueldo' => $sueldo,
-                'cPerEstado' => $estado,
-                'cPerRnd' => $rnd
-            ]);
-            
-            /*Persona::create($camposv);*/
-
-            return redirect()->route('persona.index');
         }
 
-        public function messages(){
-            return [
-                'cPerRnd.required' => 'Campo necesario',
-                'cPerApellido.required' => 'Campo necesario', 
-                'cPerNombre.required' => 'Campo necesario',
-                'cPerDireccion.required' => 'Campo necesario',
-                'dPerFecNac.required' => 'Campo necesario',
-                'nPerEdad.required' => 'Campo necesario',
-                'nPerSueldo.required' => 'Campo necesario',
-                'cPerEstado.required' => 'Campo necesario'
-            ];
-        }
 
 
 
