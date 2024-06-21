@@ -11,4 +11,5 @@ class Persona extends Model
     protected $primaryKey = 'nPerCodigo';
     protected $fillable = ['cPerRnd', 'cPerApellido', 'cPerNombre', 'cPerDireccion', 'dPerFecNac', 'nPerEdad', 'nPerSueldo', 'cPerEstado'];
     protected $guarded = [];
+    
 }

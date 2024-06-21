@@ -29,7 +29,9 @@ class PersonasController extends Controller
         }
 
         public function create(){
-            return view('create');
+            return view('create',[
+                'persona' => new Persona
+            ]);
         }
 
         public function store(CreatePersonaRequest $request){
@@ -38,28 +40,25 @@ class PersonasController extends Controller
             
             return redirect()->route('persona.index');
             
-            /*$camposv = request()->validate([
-                'cPerApellido' =>'required', 
-                'cPerNombre' =>'required',
-                'cPerDireccion' =>'required',
-                'dPerFecNac' =>'required',
-                'nPerEdad' =>'required',
-                'nPerSueldo' =>'required',
-                'cPerEstado' =>'required'
-            ]);*/
-            
-            /*$apellido = request('cPerApellido');
-            $nombre = request('cPerNombre');
-            $direccion = request('cPerDireccion');
-            $fechadenacimiento = request('dPerFecNac');
-            $edad = request('nPerEdad');
-            $sueldo = request('nPerSueldo');
-            $estado = request('cPerEstado');
-            $rnd = request('cPerRnd');*/
         }
 
+        public function edit(Persona $nPerCodigo){
+            return view('edit', [
+                'persona' => $nPerCodigo
+            ]);
+        }
 
+        public function update(Persona $persona, CreatePersonaRequest $request){
 
+            $persona->update($request->validated());
 
+            return redirect()->route('persona.show', $persona);
+        }
+
+        public function destroy(Persona $persona){
+            $persona->delete();
+
+            return redirect()->route('persona.index');
+        }
 }
 

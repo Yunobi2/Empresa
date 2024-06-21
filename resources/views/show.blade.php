@@ -2,6 +2,11 @@
 @section('title','personas | ' . $persona->cPerApellido  )
 @section('content')
 <div class="row">
+    <a href="{{ route('persona.edit', $persona )}}">Editar</a>
+    <form action="{{ route('persona.destroy', $persona) }}" method="post">
+        @csrf @method('DELETE')
+        <button>Eliminar</button>
+    </form>
     <div class="col-md-12">
         <h2>Detalles de la persona</h2>
         <p><strong>Apellido:</strong> {{ $persona->cPerApellido }}</p>
