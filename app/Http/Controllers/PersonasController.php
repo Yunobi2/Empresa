@@ -48,11 +48,11 @@ class PersonasController extends Controller
             ]);
         }
 
-        public function update(Persona $persona, CreatePersonaRequest $request){
+        public function update(Persona $nPerCodigo, CreatePersonaRequest $request){
 
-            $persona->update($request->validated());
+            $nPerCodigo->update($request->validated());
 
-            return redirect()->route('persona.show', $persona);
+            return redirect()->route('persona.show', $nPerCodigo);
         }
 
         public function destroy(Persona $persona){

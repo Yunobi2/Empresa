@@ -33,5 +33,5 @@
     <td><input type="number" name="cPerEstado" value="{{ old('cPerEstado', $persona->cPerEstado)}}"></td>
 </tr>
 <tr>
-    <td colspan="2" align="center"><button>Actualizar</button></td>
+    <td colspan="2" align="center"><button>{{ $btnText }}</button></td>
 </tr>

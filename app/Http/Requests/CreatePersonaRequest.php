@@ -35,14 +35,14 @@ class CreatePersonaRequest extends FormRequest
 
     public function messages(){
         return [
-            'cPerRnd.required' => 'Campo necesario',
-            'cPerApellido.required' => 'Campo necesario', 
-            'cPerNombre.required' => 'Campo necesario',
-            'cPerDireccion.required' => 'Campo necesario',
-            'dPerFecNac.required' => 'Campo necesario',
-            'nPerEdad.required' => 'Campo necesario',
-            'nPerSueldo.required' => 'Campo necesario',
-            'cPerEstado.required' => 'Campo necesario'
+            'cPerRnd.required' => 'Campo necesario para Rnd',
+            'cPerApellido.required' => 'Campo necesario para Apellido', 
+            'cPerNombre.required' => 'Campo necesario para Nombre',
+            'cPerDireccion.required' => 'Campo necesario para Dirección',
+            'dPerFecNac.required' => 'Campo necesario para Fecha de nacimiento',
+            'nPerEdad.required' => 'Campo necesario para Edad',
+            'nPerSueldo.required' => 'Campo necesario Sueldo',
+            'cPerEstado.required' => 'Campo necesario Estado'
         ];
     }
 }
