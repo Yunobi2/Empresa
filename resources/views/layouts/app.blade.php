@@ -8,6 +8,7 @@
 </head>
 <body>
     @include('layouts.nav')
+    @include('partials.sesion-estado')
     <div class="container">
         @yield('content')
     </div>

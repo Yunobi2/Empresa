@@ -6,7 +6,7 @@
         <th colspan="4">Crear nueva persona</th>
     </tr>
     @include('partials.validation-errors')
-    <form action="{{ route('persona.update', $persona) }}" method="post">
+    <form action="{{ route('persona.update', $persona->nPerCodigo) }}" method="post">
         @csrf @method('PATCH')
         @include('partials.form',['btnText' => 'Actualizar'])
 

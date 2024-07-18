@@ -2,7 +2,9 @@
 @section('title','personas | ' . $persona->cPerApellido  )
 @section('content')
 <div class="row">
+    @auth
     <a href="{{ route('persona.edit', $persona )}}">Editar</a>
+    @endauth
     <form action="{{ route('persona.destroy', $persona) }}" method="post">
         @csrf @method('DELETE')
         <button>Eliminar</button>
@@ -20,6 +22,5 @@
         <p><strong>Estado:</strong> {{ $persona->cPerEstado }}</p>
     </div>
 </div>
-
 @endsection
 

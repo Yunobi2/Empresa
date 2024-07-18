@@ -2,9 +2,12 @@
 @extends('layouts.app')
 @section('content')
 <tr>
+    @auth
     <td colspan="4">
         <a href="{{ route('persona.create' )}}">Nueva Persona</a>
     </td>
+    @endauth
+
 </tr>
 <tr>
     <th colspan="4">Listado de Personas</th>
