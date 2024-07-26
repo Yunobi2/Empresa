@@ -55,3 +55,8 @@
 .login{
     color: black;
 }
+
+.mt-custom {
+    margin-top: 6rem;
+    right: 100%;
+}

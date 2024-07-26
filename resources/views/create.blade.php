@@ -6,7 +6,7 @@
         <th colspan="4">Crear nueva persona</th>
     </tr>
     @include('partials.validation-errors')
-    <form action="{{ route('persona.store' )}}" method="post">
+    <form action="{{ route('persona.store' )}}" method="post" enctype="multipart/form-data">
         @include('partials.form',['btnText' => 'Guardar'])
     </form>
 </table>

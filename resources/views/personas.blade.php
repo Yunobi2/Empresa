@@ -21,6 +21,10 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $persona->cPerApellido . ' ' . $persona->cPerNombre }}</h5>
                         <a href="{{ route('persona.show', $persona->nPerCodigo) }}" class="btn btn-primary">Ver detalles</a>
+                            @if($persona->image)
+                                <img src="/storage/{{$persona->image}}" alt="{{$persona->titulo}}" width="150"
+                                height="100">
+                           @endif
                     </div>
                 </div>
             </div>
