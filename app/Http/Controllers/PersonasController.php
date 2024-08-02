@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use App\Models\Persona;
@@ -42,6 +43,13 @@ class PersonasController extends Controller
             $persona->image = $request->file('image')->store('images');
             $persona->save();
             
+            $image = Image::make(storage::get($persona->image))
+                ->widen(600)
+                ->limitColors(255)
+                ->encode();
+
+            Storage::put($persona->image, (string) $image);
+
             return redirect()->route('persona.index')->with('estado','La persona fue reada correctamente');
         }
 
@@ -57,9 +65,17 @@ class PersonasController extends Controller
 
             if($request->hasFile('image')){
                Storage::delete($persona->image);
-               $persona->fill($request-validation());
+               $persona->fill($request->validated());
                $persona->image = $request->file('image')->store('images');
                $persona->save();
+
+               $image = Image::make(storage::get($persona->image))
+                    ->widen(600)
+                    ->limitColors(255)
+                    ->encode();
+   
+               Storage::put($persona->image, (string) $image);
+
             } else {
                 $persona->update(array_filter($request->validated()));
             }
